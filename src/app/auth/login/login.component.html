@@ -1,0 +1,61 @@
+<div class="background"></div>
+<div class="container" style="margin-bottom: 30px">
+  <div class="container">
+    <div class="row">
+      <app-header></app-header>
+    </div>
+   <div class="row">
+     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+       <div class="card">
+         <div class="card-header">
+            <h4>Login</h4>
+            <div class="socials">
+                <a mat-mini-fab style="background-color: #55acee;"><i class="fa fa-twitter"></i></a>
+                <a mat-mini-fab style="background-color: #ea4c89; margin: 0 5px;"><i class="fa fa-dribbble"></i></a>
+                <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
+              </div>
+         </div>
+         <p class="tip"></p>
+         <div class="card-form">
+          
+           <div class="form-row">
+             <!-- <i class="material-icons">email</i> -->
+             <mat-form-field color="accent">
+               <input type="email" matInput placeholder="Email address"/>
+             </mat-form-field>
+           </div>
+           <div class="form-row">
+             <!-- <i class="material-icons">lock_outline</i> -->
+             <mat-form-field color="accent">
+               <input type="password" matInput placeholder="Password"/>
+             </mat-form-field>
+           </div>
+         </div>
+         <div class="card-footer row"  >
+         <div class="card-footer">
+              <button mat-raised-button  class="btn btn-rose btn-round" (click)="loginBtn()">   <i class="material-icons">lock</i> 
+                Login
+              </button>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                 <a routerLink="/forgetpassword"><i class="material-icons">lock_open</i>
+                  Unlock account
+                </a>
+              </div>
+               <div>
+                 <a  routerLink="/signup"><i class="material-icons">person_add</i>
+                  Create account
+                </a>
+               </div>
+                
+       
+              </div>
+
+           </div>
+      </div>
+     </div>
+   </div>
+  </div>
+</div>
