@@ -53,12 +53,12 @@ export class AddcompaniesComponent implements  OnInit, AfterViewInit {
       this.tabIndex--;
       moveTab.style.left = screenWidth > 990 ? '20vw' : '30vw';
       nextBtn.style.visibility = 'visible';
-      moveTab.innerHTML = 'Account';
+      moveTab.innerHTML = 'Location';
     }else if (this.tabIndex === 1) {
       this.tabIndex--;
       moveTab.style.left = '-1vw';
       preBtn.style.visibility = 'hidden';
-      moveTab.innerHTML = 'About';
+      moveTab.innerHTML = 'Company Type';
     }
     (<HTMLElement>tabs[this.tabIndex]).style.display = 'inherit';
   }
@@ -76,7 +76,7 @@ export class AddcompaniesComponent implements  OnInit, AfterViewInit {
       this.tabIndex++;
       moveTab.style.left = screenWidth > 990 ? '20vw' : '30vw';
       preBtn.style.visibility = 'visible';
-      moveTab.innerHTML = 'Account';
+      moveTab.innerHTML = 'Location';
     }else if (this.tabIndex === 1) {
       this.tabIndex++;
       moveTab.style.left = screenWidth > 990 ? '42vw' : '61.5vw';

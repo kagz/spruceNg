@@ -33,6 +33,11 @@ import { SettingsService } from './services/settings.service';
 import { RootComponent } from './dashboard/root/root.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { CompanydescComponent } from './shared/companydesc/companydesc.component';
+import { CompanylocComponent } from './shared/companyloc/companyloc.component';
+import { CompanyaddressComponent } from './shared/companyaddress/companyaddress.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Logger } from './services/logger.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +66,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     ImagecardComponent,
     FigurecardComponent,
     MsgiconbtnComponent,
-    RootComponent
+    RootComponent,
+    CompanydescComponent,
+    CompanylocComponent,
+    CompanyaddressComponent
   ],
   imports: [
     BrowserModule,
@@ -69,10 +77,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MaterialModule,
     BrowserModule,
  FlexLayoutModule,
+ 
     AppRoutingModule
+    , ReactiveFormsModule
   ],
   providers: [
-   [ SettingsService],
+   [ SettingsService,Logger],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
 
 ],

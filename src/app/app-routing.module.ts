@@ -21,9 +21,10 @@ import { HomepageComponent } from './home/homepage/homepage.component';
 import { RootComponent } from './dashboard/root/root.component';
 
 const routes: Routes = [
-  { path: 'viewjobs', component: ViewjobsComponent },
+ 
  
   { path: 'dashboard', component: RootComponent , children: [
+    { path: 'viewjobs', component: ViewjobsComponent },
     {path: '', component: HomepageComponent},
     { path: 'addcompanies', component: AddcompaniesComponent },
   { path: 'editprofile', component: ProfileComponent },

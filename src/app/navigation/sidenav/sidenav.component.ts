@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
+import {AfterViewInit, Component, OnInit, OnDestroy, EventEmitter, Output} from '@angular/core';
 import { SettingsService } from 'src/app/services/settings.service';
 import { ROUTES } from './sidenav-routes.config';
 
@@ -8,6 +8,7 @@ import { ROUTES } from './sidenav-routes.config';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
+  @Output() closeSidenav = new EventEmitter<void>();
   public color: string;
   public menuItems: object;
   public activeFontColor: string;
