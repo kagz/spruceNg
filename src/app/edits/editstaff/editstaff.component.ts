@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-editstaff',
+  templateUrl: './editstaff.component.html',
+  styleUrls: ['./editstaff.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class EditstaffComponent implements OnInit {
 
 
   public ownerForm: FormGroup;

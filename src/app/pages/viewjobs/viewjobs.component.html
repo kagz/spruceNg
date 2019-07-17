@@ -18,32 +18,28 @@
              
             </div>
             <table mat-table [dataSource]="dataSource" matSort>
-              <ng-container matColumnDef="jobTitle">
+              <ng-container matColumnDef="jobname">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Job Name </th>
                 <td mat-cell *matCellDef="let element"> {{element.name}} </td>
               </ng-container>
             
-              <ng-container matColumnDef="jobDate">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Job </th>
+              <ng-container matColumnDef="clientname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Client Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.clientname}} </td>
+              </ng-container>
+              <ng-container matColumnDef="staffsnumber">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Working Staffs </th>
+                  <td mat-cell *matCellDef="let element"> {{element.staffsnumber}} </td>
+                </ng-container>
+              <ng-container matColumnDef="startdate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
                 <td mat-cell *matCellDef="let element"> {{element.dateOfBirth | date}} </td>
               </ng-container>
             
-              <ng-container matColumnDef="Staff">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Staffs </th>
-                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-              </ng-container>
+           
             
-              <ng-container matColumnDef="Company">
-                <th mat-header-cell *matHeaderCellDef> Company </th>
-                <td mat-cell *matCellDef="let element">
-                  <button mat-icon-button color="accent" (click)="redirectToUpdate(element.id)">
-                      <mat-icon class="mat-18">system_update</mat-icon>
-                  </button>
-                </td>
-              </ng-container>
-            
-              <ng-container matColumnDef="update">
-                  <th mat-header-cell *matHeaderCellDef> Update </th>
+              <ng-container matColumnDef="editjob" style="padding: 15px">
+                  <th mat-header-cell *matHeaderCellDef> Edit Job </th>
                   <td mat-cell *matCellDef="let element">
                     <button mat-icon-button color="accent" (click)="redirectToUpdate(element.id)">
                         <mat-icon class="mat-18">system_update</mat-icon>
@@ -51,14 +47,7 @@
                   </td>
                 </ng-container>
             
-                <ng-container matColumnDef="delete">
-                    <th mat-header-cell *matHeaderCellDef> Delete </th>
-                    <td mat-cell *matCellDef="let element">
-                      <button mat-icon-button color="warn" (click)="redirectToDelete(element.id)">
-                          <mat-icon class="mat-18">delete</mat-icon>
-                      </button>
-                    </td>
-                  </ng-container>
+              
             
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

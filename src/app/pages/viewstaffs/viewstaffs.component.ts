@@ -10,7 +10,7 @@ import { Logger } from 'src/app/services/logger.service';
 })
 export class ViewstaffsComponent implements OnInit {
 
-  public displayedColumns = ['name', 'dateOfBirth', 'address', 'details', 'update', 'delete'];
+  public displayedColumns = ['name', 'contacts', 'identity', 'edit'];
   public dataSource = new MatTableDataSource<Staffs>(); 
   screenHeight: any;
   screenWidth: any;
@@ -41,13 +41,13 @@ export class ViewstaffsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }    setDisplayedColumns() {
   if (this.screenWidth < 420) {
-      this.displayedColumns = ['name', 'dateOfBirth', 'address'];
+      this.displayedColumns = ['name', 'contacts', 'identity', 'edit'];
   }
   else if (this.screenWidth >= 420 && this.screenWidth <= 800) {
-      this.displayedColumns = ['name', 'dateOfBirth', 'address', 'update', 'delete'];
+      this.displayedColumns =['name', 'contacts', 'identity', 'edit'];
   }
   else {
-      this.displayedColumns = ['name', 'dateOfBirth', 'address', 'details', 'update', 'delete'];
+      this.displayedColumns = ['name', 'contacts', 'identity', 'edit'];
   }
 }
 }

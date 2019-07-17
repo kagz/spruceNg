@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 export class CompanydescComponent implements OnInit {
 
   public ownerForm: FormGroup;
-  private dialogConfig;
+ 
 
   constructor(private location: Location) { }
 

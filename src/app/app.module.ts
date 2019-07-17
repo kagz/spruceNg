@@ -14,15 +14,20 @@ import { AddstaffComponent } from './pages/addstaff/addstaff.component';
 import { AddjobsComponent } from './pages/addjobs/addjobs.component';
 import { ViewjobsComponent } from './pages/viewjobs/viewjobs.component';
 import { ViewjobComponent } from './pages/viewjob/viewjob.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
+
+
+
+
+
 import { ViewstaffsComponent } from './pages/viewstaffs/viewstaffs.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
-import { AdminComponent } from './dashboard/admin/admin.component';
-import { UsersComponent } from './dashboard/users/users.component';
-import { JobComponent } from './edits/job/job.component';
+
+import { EditcompanyComponent } from './edits/editcompany/editcompany.component';
 import { ProfileComponent } from './edits/profile/profile.component';
 import { StaffComponent } from './edits/staff/staff.component';
-import { JobsComponent } from './home/jobs/jobs.component';
+
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { ImagecardComponent } from './navigation/imagecard/imagecard.component';
@@ -38,6 +43,10 @@ import { CompanylocComponent } from './shared/companyloc/companyloc.component';
 import { CompanyaddressComponent } from './shared/companyaddress/companyaddress.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Logger } from './services/logger.service';
+import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
+
+import { EditstaffComponent } from './edits/editstaff/editstaff.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,12 +64,11 @@ import { Logger } from './services/logger.service';
     ViewstaffsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    AdminComponent,
-    UsersComponent,
-    JobComponent,
+  
+    EditcompanyComponent,
     ProfileComponent,
-    StaffComponent,
     JobsComponent,
+    StaffComponent,
     HomepageComponent,
     NavbarComponent,
     ImagecardComponent,
@@ -69,7 +77,10 @@ import { Logger } from './services/logger.service';
     RootComponent,
     CompanydescComponent,
     CompanylocComponent,
-    CompanyaddressComponent
+    CompanyaddressComponent,
+    UpdatejobComponent,
+ 
+    EditstaffComponent
   ],
   imports: [
     BrowserModule,

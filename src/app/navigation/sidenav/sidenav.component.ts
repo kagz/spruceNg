@@ -42,7 +42,7 @@ export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
   ngOnDestroy() {
-   // this.settingsService.getsidenavFilter.unsubscribe();
+    //this.settingsService.getsidenavFilter.unsubscribe();
     this.settingsService.sidenavColorUpdate.unsubscribe();
   }
 

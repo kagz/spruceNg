@@ -8,7 +8,7 @@ export class SettingsService {
   public sidenavImageIndexUpdate: EventEmitter<number> = new EventEmitter();
   public sidenavFilter = '#fff';
   public sidenavFilterUpdate: EventEmitter<string> = new EventEmitter();
-  public sidenavColor = '#D80B0B';
+  public sidenavColor = '#212122';
   public sidenavColorUpdate: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
