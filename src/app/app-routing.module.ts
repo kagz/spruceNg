@@ -15,7 +15,10 @@ import { AddjobsComponent } from './pages/addjobs/addjobs.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { EditcompanyComponent } from './edits/editcompany/editcompany.component';
 import { ProfileComponent } from './edits/profile/profile.component';
+import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
+import { EditstaffComponent } from './edits/editstaff/editstaff.component';
 import { StaffComponent } from './edits/staff/staff.component';
+
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { RootComponent } from './dashboard/root/root.component';
@@ -27,26 +30,27 @@ const routes: Routes = [
     { path: 'viewjobs', component: ViewjobsComponent },
     {path: '', component: HomepageComponent},
     { path: 'addcompanies', component: AddcompaniesComponent },
-  { path: 'editprofile', component: ProfileComponent },
+  
   { path: 'postjobs', component: AddjobsComponent },
   { path: 'viewjob', component: ViewjobComponent },
-  { path: 'editjob', component:EditcompanyComponent },
-  { path: 'editstaff', component: StaffComponent },
+  // { path: 'editjob', component:EditcompanyComponent },
+ // { path: 'editstaff', component: StaffComponent },
   { path: 'viewstaffs', component: ViewstaffsComponent },
-  { path: 'viewclients', component: JobsComponent }
+  { path: 'viewclients', component: JobsComponent },
+
+ {path: 'viewjob/:id', component: StaffComponent },
+{ path: 'editprofile', component: ProfileComponent },
+{path: 'editcompany/:id', component: EditcompanyComponent },
+{path: 'editjob/:id', component: UpdatejobComponent },
+{path: 'editstaff/:id', component: EditstaffComponent },
   ]},
-
-
-
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: '404', component: NotFoundComponent}, 
   { path: '500', component: ServerErrorComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-// {path: 'job/:id', component: JobComponent },
-// {path: 'profile/:id', component: ProfileComponent },
-// {path: 'staff/:id', component: StaffComponent },
+
 
   { path: '**', redirectTo: '/404', pathMatch: 'full'}
 
