@@ -53,24 +53,37 @@
                             <input type="file" class="form-control-file" accept="image/*" name="file" (change)="fileChange($event)">
                           </div>
                     </div>
-                  </div>
-                  <div class="row">
+
+   <div class="col-md-3">
                         <div class="form-check">
                                 <label class="form-check-label">
-                                  <input type="checkbox" name="isSeller" class="form-check-input" > Make Admin
+                                  <input type="checkbox" name="isUser" class="form-check-input" > Make User
                                 </label>
                               </div>
                   </div>
-                  <div class="row action-btn">
-                    <button md-raised-button type="submit" class="btn btn-rose">UPDATE </button>
+                  <div class="col-md-3">
+                      <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" name="isAdmin" class="form-check-input" > Make Admin
+                              </label>
+                            </div>
+                </div>
                   </div>
-                  <div class="row action-btn">
+               
+                  <div class="row" style="margin-top: 30px" fxLayoutAlign="center " >
+
+                
+                  <div class="row action-btn" style="padding-right: 50px">
+                    <button md-raised-button type="submit" class="btn btn-info">UPDATE </button>
+                  </div>
+                  <div class="row action-btn" style="padding-right: 50px">
                         <button md-raised-button type="submit" class="btn btn-rose">DISABLE </button>
                       </div>
-                  <div class="row action-btn">
-                        <button md-raised-button type="submit" class="btn btn-rose">DELETE </button>
+                  <div class="row action-btn" style="padding-right: 50px">
+                        <button md-raised-button type="submit" class="btn btn-danger">DELETE </button>
                       </div>
-                </form>
+                    </div>
+                    </form>
               </div>
             </div>
           </div>

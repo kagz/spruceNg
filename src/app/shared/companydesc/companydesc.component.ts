@@ -23,6 +23,7 @@ export class CompanydescComponent implements OnInit {
       companyname: new FormControl('', [Validators.required, Validators.maxLength(100)]),
       location: new FormControl('', [Validators.required, Validators.maxLength(100)])
     });
+    
   }
 
   public hasError = (controlName: string, errorName: string) => {

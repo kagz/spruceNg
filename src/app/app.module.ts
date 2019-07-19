@@ -27,7 +27,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { EditcompanyComponent } from './edits/editcompany/editcompany.component';
 import { ProfileComponent } from './edits/profile/profile.component';
 import { StaffComponent } from './edits/staff/staff.component';
-
+import {MatCardModule} from '@angular/material/card';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { ImagecardComponent } from './navigation/imagecard/imagecard.component';
@@ -88,7 +88,7 @@ import { EditstaffComponent } from './edits/editstaff/editstaff.component';
     MaterialModule,
     BrowserModule,
  FlexLayoutModule,
- 
+ MatCardModule,
     AppRoutingModule
     , ReactiveFormsModule
   ],

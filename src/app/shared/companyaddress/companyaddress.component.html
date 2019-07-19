@@ -6,7 +6,7 @@
       <mat-card-content>
 
         <mat-form-field>
-          <input matInput type="text" placeholder="Company's name" formControlName="companyname" id="name">
+          <input matInput type="text" placeholder="Client's name" formControlName="companyname" id="name">
           <!-- <mat-hint align="end">Not more then 60 characters long.</mat-hint> -->
           <mat-error *ngIf="hasError('companyname', 'required')">Name is required</mat-error>
           <mat-error *ngIf="hasError('companyname', 'maxlength')">You have more than 60 characters</mat-error>
@@ -26,7 +26,7 @@
           <mat-error *ngIf="hasError('phone', 'maxlength')">You have more than 100 characters</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="email" placeholder="Company's Email" formControlName="email">
+          <input matInput type="email" placeholder="Client's Email" formControlName="email">
           <!-- <mat-hint align="end">Not more then 100 characters long.</mat-hint> -->
           <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
           <mat-error *ngIf="hasError('email', 'maxlength')">Wrong Email</mat-error>
