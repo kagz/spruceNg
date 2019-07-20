@@ -10,11 +10,8 @@
       <app-msgiconbtn icon="notifications" number="5" [matMenuTriggerFor]="menu"></app-msgiconbtn>
     
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Mike John responded to your email</button>
-        <button mat-menu-item>You have 5 new tasks</button>
-        <button mat-menu-item>You're now friend with Andrew</button>
-        <button mat-menu-item>Another Notification</button>
-        <button mat-menu-item>Another One</button>
+        <button mat-menu-item>New Jobs Posted</button>
+      
       </mat-menu>
     </div>
     <div class="right-part" id="nav-right">
@@ -23,15 +20,12 @@
         <app-msgiconbtn icon="notifications" number="25" [matMenuTriggerFor]="menu1"></app-msgiconbtn>
         <button mat-icon-button><i class="material-icons icon-btn" routerLink="/login" > person</i></button>
         <mat-menu #menu1="matMenu">
-          <button mat-menu-item>Mike John responded to your email</button>
-          <button mat-menu-item>You have 5 new tasks</button>
-          <button mat-menu-item>You're now friend with Andrew</button>
-          <button mat-menu-item>Another Notification</button>
-          <button mat-menu-item>Another One</button>
+          <button mat-menu-item routerLink="/dashboard/bookedjobs">View Applied Jobs</button>
+         
         </mat-menu>
       </div>
     <div id="menu">
-      <button mat-icon-button (click)="onToggleSidenav()"><i class="material-icons">menu</i></button>
+      <button mat-icon-button  (click)="onToggleSidenav()"><i class="material-icons">menu</i></button>
     </div>
   </div>
 </div>
