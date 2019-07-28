@@ -16,27 +16,35 @@
               </div>
          </div>
          <p class="tip"></p>
+
+         <form 
+         (ngSubmit)="Login(loginForm.value)" 
+         [formGroup]="loginForm" autocomplete="off" novalidate  fxLayout="column wrap"
+           fxLayoutAlign="center center" fxLayoutGap="10px">
+
          <div class="card-form">
           
            <div class="form-row">
              <!-- <i class="material-icons">email</i> -->
              <mat-form-field color="accent">
-               <input type="email" matInput placeholder="Email address"/>
+               <input type="email" matInput placeholder="Email address"formControlName="email" [(ngModel)]="email" id="email" name="email"/>
              </mat-form-field>
            </div>
            <div class="form-row">
              <!-- <i class="material-icons">lock_outline</i> -->
              <mat-form-field color="accent">
-               <input type="password" matInput placeholder="Password"/>
+               <input type="password" matInput placeholder="Password" formControlName="password"[(ngModel)]="password" name="password" />
              </mat-form-field>
            </div>
          </div>
          <div class="card-footer row"  >
          <div class="card-footer">
-              <button mat-raised-button  class="btn btn-rose btn-round" (click)="loginBtn()">   <i class="material-icons">lock</i> 
+              <button mat-raised-button  class="btn btn-rose btn-round"  type="submit"  >   <i class="material-icons">lock</i> 
                 Login
               </button>
             </div>
+
+         
 
             <div class="card-footer">
               <div>
@@ -54,6 +62,7 @@
               </div>
 
            </div>
+          </form>
       </div>
      </div>
    </div>

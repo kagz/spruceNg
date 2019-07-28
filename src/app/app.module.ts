@@ -41,11 +41,19 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CompanydescComponent } from './shared/companydesc/companydesc.component';
 import { CompanylocComponent } from './shared/companyloc/companyloc.component';
 import { CompanyaddressComponent } from './shared/companyaddress/companyaddress.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Logger } from './services/logger.service';
 import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
 
 import { EditstaffComponent } from './edits/editstaff/editstaff.component';
+import { ToastService } from './services/toast.service';
+import { RepositoryService } from './services/repository.service';
+import { UsersService } from './services/users.service';
+import { DataService } from './services/data.service';
+import { LoginService } from './services/login.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpIntercepterBasicAuthService } from './services/interceptors.service';
+import { SuccessPageComponent } from './errors/success/success.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +88,9 @@ import { EditstaffComponent } from './edits/editstaff/editstaff.component';
     CompanyaddressComponent,
     UpdatejobComponent,
  
-    EditstaffComponent
+    EditstaffComponent,
+ 
+    SuccessPageComponent
   ],
   imports: [
     BrowserModule,
@@ -89,13 +99,15 @@ import { EditstaffComponent } from './edits/editstaff/editstaff.component';
     BrowserModule,
  FlexLayoutModule,
  MatCardModule,
-    AppRoutingModule
-    , ReactiveFormsModule
+    AppRoutingModule,
+    HttpClientModule
+    , ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
-   [ SettingsService,Logger],
+   [ SettingsService,Logger,ToastService,RepositoryService ,UsersService,DataService,LoginService ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
-
+   {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
 ],
   bootstrap: [AppComponent]
 })
