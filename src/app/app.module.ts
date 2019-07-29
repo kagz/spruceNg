@@ -47,12 +47,11 @@ import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
 
 import { EditstaffComponent } from './edits/editstaff/editstaff.component';
 import { ToastService } from './services/toast.service';
-import { RepositoryService } from './services/repository.service';
-import { UsersService } from './services/users.service';
+
 import { DataService } from './services/data.service';
 import { LoginService } from './services/login.service';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { HttpIntercepterBasicAuthService } from './services/interceptors.service';
+import {  HttpClientModule } from '@angular/common/http';
+
 import { SuccessPageComponent } from './errors/success/success.component';
 
 @NgModule({
@@ -105,9 +104,8 @@ import { SuccessPageComponent } from './errors/success/success.component';
     FormsModule
   ],
   providers: [
-   [ SettingsService,Logger,ToastService,RepositoryService ,UsersService,DataService,LoginService ],
+   [ SettingsService,Logger,ToastService,DataService,LoginService ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
-   {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
 ],
   bootstrap: [AppComponent]
 })

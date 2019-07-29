@@ -31,14 +31,6 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
   });
-  this.loginService.checkSession().subscribe(
-    res => {
-      this.loggedIn=true;
-    },
-    error => {
-      this.loggedIn=false;
-    }
-  );
   this.dialogConfig = {
     height: '200px',
     width: '400px',
@@ -47,22 +39,6 @@ export class LoginComponent implements OnInit {
   }
   }
   Login() {
-  	this.loginService.sendCredential(this.email, this.password).subscribe(
-  		res => {
-  			console.log(res);
-  			localStorage.setItem("xAuthToken", JSON.stringify(res));
-  			
-        let dialogRef = this.dialog.open(SuccessPageComponent, this.dialogConfig);
-        dialogRef.afterClosed()
-      this.router.navigate(['home'])
-      this.loggedIn = true;
-  		},
-  		error => {
-        console.log(error);
-        this.loggedIn = false;
-        this.errorService.dialogConfig = { ...this.dialogConfig };
-        this.errorService.handleError(error);
-  		}
-  	);
-  }
+  
+}
 }
