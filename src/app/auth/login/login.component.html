@@ -15,11 +15,14 @@
                 <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
               </div>
          </div>
-         <p class="tip"></p>
+         <p class="tip">
+{{errMsg}}
+
+         </p>
 
          <form 
          (ngSubmit)="Login(loginForm.value)" 
-         [formGroup]="loginForm" autocomplete="off" novalidate  fxLayout="column wrap"
+         [formGroup]="loginForm" autocomplete="on" novalidate  fxLayout="column wrap"
            fxLayoutAlign="center center" fxLayoutGap="10px">
 
          <div class="card-form">

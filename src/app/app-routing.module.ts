@@ -24,11 +24,13 @@ import { StaffComponent } from './edits/staff/staff.component';
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { RootComponent } from './dashboard/root/root.component';
+import { AuthGuard } from './services/auth-guard.service';
+
 
 const routes: Routes = [
  
  
-  { path: 'dashboard', component: RootComponent , children: [
+  { path: 'dashboard', component: RootComponent , canActivate:[AuthGuard], children: [
     { path: 'viewjobs', component: ViewjobsComponent },
     {path: '', component: HomepageComponent},
     { path: 'addcompanies', component: AddcompaniesComponent },

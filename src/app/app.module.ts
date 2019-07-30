@@ -15,11 +15,6 @@ import { AddjobsComponent } from './pages/addjobs/addjobs.component';
 import { ViewjobsComponent } from './pages/viewjobs/viewjobs.component';
 import { ViewjobComponent } from './pages/viewjob/viewjob.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
-
-
-
-
-
 import { ViewstaffsComponent } from './pages/viewstaffs/viewstaffs.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -48,11 +43,17 @@ import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
 import { EditstaffComponent } from './edits/editstaff/editstaff.component';
 import { ToastService } from './services/toast.service';
 
-import { DataService } from './services/data.service';
-import { LoginService } from './services/login.service';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SuccessPageComponent } from './errors/success/success.component';
+
+
+import { ErrorComponent } from './errors/error/error.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { UserInfoService } from './services/user-info.service';
+import { AppConfig } from 'app-config';
+import { ApiRequestService } from './services/api-request.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import { SuccessPageComponent } from './errors/success/success.component';
     ViewstaffsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-  
+    ErrorComponent,
     EditcompanyComponent,
     ProfileComponent,
     JobsComponent,
@@ -90,6 +91,7 @@ import { SuccessPageComponent } from './errors/success/success.component';
     EditstaffComponent,
  
     SuccessPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -104,9 +106,23 @@ import { SuccessPageComponent } from './errors/success/success.component';
     FormsModule
   ],
   providers: [
-   [ SettingsService,Logger,ToastService,DataService,LoginService ],
+   [ SettingsService,
+    Logger,
+    ToastService,
+    AuthGuard,
+    UserInfoService,
+   AppConfig,
+    ApiRequestService,
+    LoginService,
+  ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
 ],
+
+entryComponents: [
+  SuccessPageComponent,
+  ErrorComponent
+],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
