@@ -58,6 +58,8 @@ import { ForgetPasswordService } from './services/forgetpassword.service';
 import { ViewPostedJobsComponent } from './pages/viewpostedjobs/viewpostedjobs.component';
 import { BookedJobsComponent } from './pages/bookedjobs/bookedjobs.component';
 import { RootComponent } from './home/root/root.component';
+import { CustomerService } from './services/newjobs.service';
+import { CreateCompanyService } from './services/createcompany.service';
 
 @NgModule({
   declarations: [
@@ -119,7 +121,9 @@ import { RootComponent } from './home/root/root.component';
     ApiRequestService,
     LoginService,
     RegisterService,
-    ForgetPasswordService
+    ForgetPasswordService,
+    CreateCompanyService,
+    CustomerService
   ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
 ],

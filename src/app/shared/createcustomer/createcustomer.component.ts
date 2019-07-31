@@ -8,13 +8,13 @@ import { Location } from '@angular/common';
 })
 export class CreatecustomerComponent implements OnInit {
 
-  public ownerForm: FormGroup;
+  public newCustomerForm: FormGroup;
  
 
   constructor(private location: Location) { }
 
   ngOnInit() {
-    this.ownerForm = new FormGroup({
+    this.newCustomerForm = new FormGroup({
       jobname: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       dateOfStart: new FormControl(new Date()),
      
@@ -27,7 +27,7 @@ export class CreatecustomerComponent implements OnInit {
   }
 
   public hasError = (controlName: string, errorName: string) => {
-    return this.ownerForm.controls[controlName].hasError(errorName);
+    return this.newCustomerForm.controls[controlName].hasError(errorName);
   }
 
   public onCancel = () => {

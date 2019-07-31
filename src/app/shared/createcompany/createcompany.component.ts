@@ -7,13 +7,13 @@ import { Location } from '@angular/common';
   styleUrls: ['./createcompany.component.css']
 })
 export class CreateCompanyComponent implements OnInit {
-  public ownerForm: FormGroup;
+  public newCompanyForm: FormGroup;
   private dialogConfig;
 
   constructor(private location: Location) { }
 
   ngOnInit() {
-    this.ownerForm = new FormGroup({
+    this.newCompanyForm = new FormGroup({
       companyname: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       joinDate: new FormControl(new Date()),
       jobdesc: new FormControl('', [Validators.required, Validators.maxLength(100)])
@@ -26,7 +26,7 @@ export class CreateCompanyComponent implements OnInit {
   }
 
   public hasError = (controlName: string, errorName: string) => {
-    return this.ownerForm.controls[controlName].hasError(errorName);
+    return this.newCompanyForm.controls[controlName].hasError(errorName);
   }
 
   public onCancel = () => {
