@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   email = '';
   password = '';
   errMsg="";
+
+  btnDisabled = false;
   constructor(
       private formBuilder: FormBuilder,
       private router: Router,
@@ -26,15 +28,18 @@ export class LoginComponent implements OnInit {
       });
       this.loginService.logout(true);
   }
-  Login() {
+  async Login() {
+    this.btnDisabled = true;
   	this.loginService.getToken(this.email, this.password).subscribe(
-  		res => {
+  		async res => {
       if (res.user === undefined || res.user.token === undefined || res.user.token === "INVALID" ){
         this.errMsg = 'Username or password is incorrect';
         return;
     }
+    //await this.res.getProfile();
         this.router.navigate(['dashboard'])
      }
-  	);
+    );
+    this.btnDisabled = false;
   }
 }

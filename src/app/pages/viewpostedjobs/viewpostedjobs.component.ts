@@ -1,15 +1,16 @@
+
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { Staffs } from 'src/app/model/staffs.model';
 import { Logger } from 'src/app/services/logger.service';
 
 @Component({
-  selector: 'app-jobs',
-  templateUrl: './jobs.component.html',
-  styleUrls: ['./jobs.component.css']
+  selector: 'app-viewpostedjobs',
+  templateUrl: './viewpostedjobs.component.html',
+  styleUrls: ['./viewpostedjobs.component.css']
 })
-export class JobsComponent implements OnInit {
-  public displayedColumns = ['clientname', 'contacts', 'email', 'location', 'edit'];
+export class ViewPostedJobsComponent implements OnInit {
+  public displayedColumns = ['jobname', 'clientname','staffsnumber', 'startdate', 'editjob'];
   public dataSource = new MatTableDataSource<Staffs>(); 
   screenHeight: any;
   screenWidth: any;
@@ -40,13 +41,13 @@ export class JobsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }    setDisplayedColumns() {
   if (this.screenWidth < 420) {
-      this.displayedColumns = ['clientname', 'contacts', 'email', 'location', 'edit'];
+      this.displayedColumns = ['jobname', 'clientname', 'staffsnumber','startdate', 'editjob'];
   }
   else if (this.screenWidth >= 420 && this.screenWidth <= 800) {
-      this.displayedColumns = ['clientname', 'contacts', 'email', 'location', 'edit'];
+      this.displayedColumns = ['jobname', 'clientname','staffsnumber', 'startdate', 'editjob'];
   }
   else {
-      this.displayedColumns = ['clientname', 'contacts', 'email', 'location', 'edit'];
+      this.displayedColumns =['jobname', 'clientname','staffsnumber', 'startdate', 'editjob'];
   }
 }
 }

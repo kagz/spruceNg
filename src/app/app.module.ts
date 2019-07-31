@@ -12,9 +12,8 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { AddcompaniesComponent } from './pages/addcompanies/addcompanies.component';
 import { AddstaffComponent } from './pages/addstaff/addstaff.component';
 import { AddjobsComponent } from './pages/addjobs/addjobs.component';
-import { ViewjobsComponent } from './pages/viewjobs/viewjobs.component';
-import { ViewjobComponent } from './pages/viewjob/viewjob.component';
-import { JobsComponent } from './pages/jobs/jobs.component';
+
+import { ViewClients } from './pages/viewclients/viewclients.component';
 import { ViewstaffsComponent } from './pages/viewstaffs/viewstaffs.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -30,12 +29,12 @@ import { FigurecardComponent } from './navigation/figurecard/figurecard.componen
 import { MaterialModule } from './material.module';
 import { MsgiconbtnComponent } from './navigation/msgiconbtn/msgiconbtn.component';
 import { SettingsService } from './services/settings.service';
-import { RootComponent } from './dashboard/root/root.component';
+
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { CompanydescComponent } from './shared/companydesc/companydesc.component';
+import { CreatecustomerComponent } from './shared/createcustomer/createcustomer.component';
 import { CompanylocComponent } from './shared/companyloc/companyloc.component';
-import { CompanyaddressComponent } from './shared/companyaddress/companyaddress.component';
+import { CreateCompanyComponent } from './shared/createcompany/createcompany.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Logger } from './services/logger.service';
 import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
@@ -43,7 +42,7 @@ import { UpdatejobComponent } from './edits/updatejob/updatejob.component';
 import { EditstaffComponent } from './edits/editstaff/editstaff.component';
 import { ToastService } from './services/toast.service';
 
-import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 
 import { SuccessPageComponent } from './errors/success/success.component';
 
@@ -56,6 +55,9 @@ import { ApiRequestService } from './services/api-request.service';
 import { LoginService } from './services/login.service';
 import { RegisterService } from './services/register.service';
 import { ForgetPasswordService } from './services/forgetpassword.service';
+import { ViewPostedJobsComponent } from './pages/viewpostedjobs/viewpostedjobs.component';
+import { BookedJobsComponent } from './pages/bookedjobs/bookedjobs.component';
+import { RootComponent } from './home/root/root.component';
 
 @NgModule({
   declarations: [
@@ -69,15 +71,15 @@ import { ForgetPasswordService } from './services/forgetpassword.service';
     AddcompaniesComponent,
     AddstaffComponent,
     AddjobsComponent,
-    ViewjobsComponent,
-    ViewjobComponent,
+  
+    ViewPostedJobsComponent,
     ViewstaffsComponent,
     NotFoundComponent,
     ServerErrorComponent,
     ErrorComponent,
     EditcompanyComponent,
     ProfileComponent,
-    JobsComponent,
+    ViewClients,
     StaffComponent,
     HomepageComponent,
     NavbarComponent,
@@ -85,11 +87,11 @@ import { ForgetPasswordService } from './services/forgetpassword.service';
     FigurecardComponent,
     MsgiconbtnComponent,
     RootComponent,
-    CompanydescComponent,
+    CreatecustomerComponent,
     CompanylocComponent,
-    CompanyaddressComponent,
+    CreateCompanyComponent,
     UpdatejobComponent,
- 
+    BookedJobsComponent,
     EditstaffComponent,
  
     SuccessPageComponent

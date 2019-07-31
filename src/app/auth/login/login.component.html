@@ -21,7 +21,7 @@
 
          <form 
          (ngSubmit)="Login(loginForm.value)" 
-         [formGroup]="loginForm" autocomplete="on" novalidate  fxLayout="column wrap"
+         [formGroup]="loginForm" autocomplete="off" novalidate  fxLayout="column wrap"
            fxLayoutAlign="center center" fxLayoutGap="10px">
 
          <div class="card-form">
@@ -41,7 +41,7 @@
          </div>
          <div class="card-footer row"  >
          <div class="card-footer">
-              <button mat-raised-button  class="btn btn-rose btn-round"  type="submit"  >   <i class="material-icons">lock</i> 
+              <button mat-raised-button  class="btn btn-rose btn-round"  type="submit" [disabled]="btnDisabled" >   <i class="material-icons">lock</i> 
                 Login
               </button>
             </div>
@@ -54,7 +54,7 @@
                   Unlock account
                 </a>
               </div>
-               <div>
+               <div fxHide.gt-xs>
                  <a  routerLink="/signup"><i class="material-icons"></i>
                   Create account
                 </a>

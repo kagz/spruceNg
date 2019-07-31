@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 @Component({
-  selector: 'app-companydesc',
-  templateUrl: './companydesc.component.html',
-  styleUrls: ['./companydesc.component.css']
+  selector: 'app-createcustomer',
+  templateUrl: './createcustomer.component.html',
+  styleUrls: ['./createcustomer.component.css']
 })
-export class CompanydescComponent implements OnInit {
+export class CreatecustomerComponent implements OnInit {
 
   public ownerForm: FormGroup;
  
