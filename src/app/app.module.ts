@@ -54,6 +54,8 @@ import { UserInfoService } from './services/user-info.service';
 import { AppConfig } from 'app-config';
 import { ApiRequestService } from './services/api-request.service';
 import { LoginService } from './services/login.service';
+import { RegisterService } from './services/register.service';
+import { ForgetPasswordService } from './services/forgetpassword.service';
 
 @NgModule({
   declarations: [
@@ -114,6 +116,8 @@ import { LoginService } from './services/login.service';
    AppConfig,
     ApiRequestService,
     LoginService,
+    RegisterService,
+    ForgetPasswordService
   ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
 ],

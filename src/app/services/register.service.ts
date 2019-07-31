@@ -6,27 +6,29 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { UserInfoService, LoginInfoInStorage } from './user-info.service';
 import { ApiRequestService } from './api-request.service';
-export interface LoginRequestParam{
+export interface RegisterRequestParam{
     email:string;
     password:string;
+    name:string;
 }
 @Injectable()
-export class LoginService {
+export class RegisterService {
     public landingPage:string = "/dashboard";
     constructor(
-        private router:Router,
+       
         private userInfoService: UserInfoService,
         private apiRequest: ApiRequestService
     ) {}
-    getToken(email:string, password:string): Observable<any> {
+    newUser(email:string, password:string, name:string): Observable<any> {
         let me = this;
-        let bodyData:LoginRequestParam = {
+        let bodyData:RegisterRequestParam = {
             "email": email,
+            "name": name,
             "password": password,
         }
-         let loginDataSubject:BehaviorSubject<any> = new BehaviorSubject<any>([]); 
+         let registerDataSubject:BehaviorSubject<any> = new BehaviorSubject<any>([]); 
         let loginInfoReturn:LoginInfoInStorage; 
-        this.apiRequest.post('login', bodyData)
+        this.apiRequest.post('register', bodyData)
             .subscribe(jsonResp => {
                 if (jsonResp){
                     //Create a success object that we want to send back to login page
@@ -37,28 +39,22 @@ export class LoginService {
                         }
                     };
                     // store username and jwt token in session storage to keep user logged in between page refreshes
-                    this.userInfoService.storeUserInfo(JSON.stringify(loginInfoReturn));
+                    this.userInfoService.storeUserInfo(JSON.stringify(loginInfoReturn.user));
                 }
                 else {
                     //Create a faliure object that we want to send back to login page
                     loginInfoReturn = {
-                    "landingPage":"/login"
+                    "landingPage":"/register"
                     };
                 }
-                loginDataSubject.next(loginInfoReturn);
+                registerDataSubject.next(loginInfoReturn);
             },
             err => {
               loginInfoReturn = {
-              "landingPage": "/login"
+              "landingPage": "/register"
               };
             });
-          return loginDataSubject;
+          return registerDataSubject;
     }
-    logout(navigatetoLogout=true): void {
-        // clear token remove user from local storage to log user out
-        this.userInfoService.removeUserInfo();
-        if(navigatetoLogout){
-            this.router.navigate([""]);
-        }
-    }
+
 }
