@@ -1,10 +1,15 @@
 export interface CreateCompany{
-    id: string;
+
+   
+
+    //_id: string;
     name: string;
-    joinDate: Date;
+   // joinDate: Date;
     phone: string;
     email: string;
-    location: string;
-    jobdescription: string;
+    clientLocation: string;
+    jobdesc: string;
+
+
 
 }

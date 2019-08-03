@@ -1,5 +1,5 @@
 export interface Staffs{
-    id: string;
+    _id: string;
     name: string;
     dateOfBirth: Date;
     address: string;

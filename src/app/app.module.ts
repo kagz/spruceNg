@@ -31,7 +31,7 @@ import { MsgiconbtnComponent } from './navigation/msgiconbtn/msgiconbtn.componen
 import { SettingsService } from './services/settings.service';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { CreatecustomerComponent } from './shared/createcustomer/createcustomer.component';
 import { CompanylocComponent } from './shared/companyloc/companyloc.component';
 import { CreateCompanyComponent } from './shared/createcompany/createcompany.component';
@@ -45,7 +45,8 @@ import { ToastService } from './services/toast.service';
 import {  HttpClientModule } from '@angular/common/http';
 
 import { SuccessPageComponent } from './errors/success/success.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { ErrorComponent } from './errors/error/error.component';
 import { AuthGuard } from './services/auth-guard.service';
@@ -60,6 +61,8 @@ import { BookedJobsComponent } from './pages/bookedjobs/bookedjobs.component';
 import { RootComponent } from './home/root/root.component';
 import { CustomerService } from './services/newjobs.service';
 import { CreateCompanyService } from './services/createcompany.service';
+import { DataService } from './services/data.service';
+import { MessageComponent } from './shared/message/message.component';
 
 @NgModule({
   declarations: [
@@ -96,10 +99,13 @@ import { CreateCompanyService } from './services/createcompany.service';
     BookedJobsComponent,
     EditstaffComponent,
  
-    SuccessPageComponent
+    SuccessPageComponent,
+ 
+    MessageComponent
 
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -123,7 +129,8 @@ import { CreateCompanyService } from './services/createcompany.service';
     RegisterService,
     ForgetPasswordService,
     CreateCompanyService,
-    CustomerService
+    CustomerService,
+    DataService
   ],
    {provide: LocationStrategy, useClass: HashLocationStrategy},
 ],

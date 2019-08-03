@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
       private formBuilder: FormBuilder,
       private router: Router,
       private registerService: RegisterService,
-      private loginService: LoginService,
+ 
             )
 
        { }
